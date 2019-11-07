@@ -53,7 +53,9 @@
     $('#experience-timeline').each(function() {
 
         $this = $(this); // Store reference to this
+        
         $userContent = $this.children('div'); // user content
+        
 
         // Create each timeline block
         $userContent.each(function() {
@@ -62,9 +64,8 @@
 
         // Add icons to each block
         $this.find('.vtimeline-point').each(function() {
-            var icon = $this.data('icon');
-            console.log(icon)
-            $(this).prepend('<div class="vtimeline-icon"><i class="fas fa-map-marker-alt"></i></div>');
+            var icon = $(this).find('.vtimeline-content').data('icon');
+            $(this).prepend('<div class="vtimeline-icon"><i class="fas fa-'+icon+'"></i></div>');
         });
 
         // Add dates to the timeline if exists
